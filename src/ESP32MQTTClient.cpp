@@ -587,7 +587,7 @@ void ESP32MQTTClient::onEventCallback(esp_mqtt_event_handle_t event)
             setConnectionState(false);
             if (_enableSerialLogs)
                 ESP_LOGW(TAG, "MQTT -->> %s disconnected (%lus)", _mqttUri, (unsigned long)(esp_timer_get_time() / 1000000));
-            
+            onMqttDisconnect(_mqtt_client);
             if (_drasticResetOnConnectionFailures) {
                 ESP_LOGW(TAG, "Drastic reset triggered due to connection failure");
                 esp_restart();

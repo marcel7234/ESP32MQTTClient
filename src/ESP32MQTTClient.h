@@ -8,6 +8,7 @@
 #include "esp_idf_version.h" // check IDF version
 
 void onMqttConnect(esp_mqtt_client_handle_t client);
+void onMqttDisconnect(esp_mqtt_client_handle_t client);
 #if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0)
 esp_err_t handleMQTT(esp_mqtt_event_handle_t event);
 #else  // IDF CHECK
